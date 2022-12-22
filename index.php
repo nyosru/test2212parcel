@@ -76,6 +76,8 @@ echo '<table width="100%" >
 
     № посылки: <input type="number" min="0" max="9999999999" step="1" name="parcel_id" >
     <br/>
+    № webshop_id: <input type="number" min="0" max="9999999999" step="1" name="webshop_id" >
+    <br/>
     новый статус: <select name="new_value" >
         <option value="" >Выберите</option>
         <option value="6" >В пути в город</option>

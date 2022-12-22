@@ -68,7 +68,9 @@ class db
 
         if (!empty($param)) {
             foreach ($param as $k => $v) {
-                if (($k == 'parcel_id' ||
+                if ((
+                    $k == 'parcel_id' ||
+                    $k == 'webshop_id' ||
                         $k == 'new_value'
                     ) && !empty($v)
                 ) {
@@ -77,6 +79,13 @@ class db
                 }
             }
         }
+
+        $sql0 = 'SELECT * FROM `parcels` ' . (!empty($sqlWhere) ? ' WHERE ' . $sqlWhere : '') . ' ;';
+        echo '<br/>' . $sql0 . '<br/>';
+        $sql = self::$db->prepare($sql0);
+        $sql->execute($in);
+        $ee = $sql->fetchAll(PDO::FETCH_ASSOC);
+        echo '<pre>', print_r($ee), '</pre>';
 
         $sql0 = 'SELECT * FROM `parcel_log` ' . (!empty($sqlWhere) ? ' WHERE ' . $sqlWhere : '') . ' ;';
         echo '<br/>' . $sql0 . '<br/>';
