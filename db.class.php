@@ -68,9 +68,8 @@ class db
 
         if (!empty($param)) {
             foreach ($param as $k => $v) {
-                if ((
-                    $k == 'parcel_id' ||
-                    $k == 'webshop_id' ||
+                if (($k == 'parcel_id' ||
+                        $k == 'webshop_id' ||
                         $k == 'new_value'
                     ) && !empty($v)
                 ) {
@@ -94,7 +93,6 @@ class db
         // $ee = $sql->fetchAll(PDO::FETCH_ASSOC);
         // echo '<pre>', print_r($ee), '</pre>';
 
-        return $decoded;
-
+        return;
     }
 }
