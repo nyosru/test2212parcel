@@ -77,19 +77,19 @@ echo '<table width="100%" >
     № посылки: <input type="number" min="0" max="9999999999" step="1" name="parcel_id" >
     <br/>
     № webshop_id: <input type="number" min="0" max="9999999999" step="1" name="webshop_id" >
-    <br/>
-    новый статус: <select name="new_value" >
-        <option value="" >Выберите</option>
-        <option value="6" >В пути в город</option>
-        <option value="15" >В пути в город-отправитель</option>
-        <option value="19" >В пути в ИМ</option>
-        <option value="2" >В пути в ТД</option>
-        <option value="5" >Готов к отправке</option>
-        <option value="14" >Готов к отправке в город-отправитель</option>
-        <option value="18" >Готов к отправке в ИМ</option>
-    </select>
-    <br/>
-    токен: <input type="text" name="token" >
+    <br/>'
+    // .' новый статус: <select name="new_value" >
+    //     <option value="" >Выберите</option>
+    //     <option value="6" >В пути в город</option>
+    //     <option value="15" >В пути в город-отправитель</option>
+    //     <option value="19" >В пути в ИМ</option>
+    //     <option value="2" >В пути в ТД</option>
+    //     <option value="5" >Готов к отправке</option>
+    //     <option value="14" >Готов к отправке в город-отправитель</option>
+    //     <option value="18" >Готов к отправке в ИМ</option>
+    // </select>
+    // <br/>'
+    .'токен: <input type="text" name="token" >
     <br/>
     
     <button type="submit" >Отправить</button>
