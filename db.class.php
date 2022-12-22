@@ -70,7 +70,8 @@ class db
             foreach ($param as $k => $v) {
                 if (($k == 'parcel_id' ||
                         $k == 'webshop_id' ||
-                        $k == 'new_value'
+                        $k == 'date_create' 
+                        // || $k == 'new_value'
                     ) && !empty($v)
                 ) {
                     $sqlWhere .= (!empty($sqlWhere) ? ' AND ' : '') . ' `' . $k . '` = :' . $k;
