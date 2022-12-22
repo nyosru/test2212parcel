@@ -24,7 +24,9 @@ class db
         if (self::$db === null)
             self::connectDb();
 
-        $payload['date_create'] = date('Y-m-d H:i:s');
+        if (empty($payload['date_create']))
+            $payload['date_create'] = date('Y-m-d H:i:s');
+
         $payload['order_log_event_type_title'] = 'title';
         $payload['new_value_title'] = 'title';
 
