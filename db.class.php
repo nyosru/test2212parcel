@@ -8,7 +8,6 @@ class db
 
     static public function connectDb()
     {
-
         try {
             self::$db = new PDO("mysql:host=ss_db;dbname=testParcel2212;charset=utf8mb4", "root", "123456");
         }

@@ -73,7 +73,9 @@ class job
         $return = [
             'parcel_id' => self::validate($post['parcel_id'] ?? '', 'number', 'номер посылки'),
             'workshop_id' => self::validate($user->workshop_id ?? '', 'number', 'номер клиента'),
-            'new_value' => self::validate($post['new_value'] ?? '', 'number', 'новый статус')
+            'new_value' => self::validate($post['new_value'] ?? '', 'number', 'новый статус'),
+            // может быть пустым
+            'date_create' => self::validate($post['date_create'] ?? '', 'empty', 'date_create')
         ];
 
         if (!empty(self::$error)) {
@@ -93,7 +95,7 @@ class job
         if (!empty(self::$error))
             return false;
 
-        if (empty($val)) {
+        if (empty($val) && $type != 'empty' ) {
             self::$error = (!empty($PoleName) ? $PoleName . ': ' : '') . 'не заполнено';
             return false;
         } else {
