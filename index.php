@@ -24,26 +24,22 @@ echo '</fieldset>';
 
 echo '</td></tr></table>';
 
-
 if (!empty($_POST['login']) && !empty($_POST['password'])) {
     $result = job::enterLk($_POST['login'], $_POST['password']);
     if (!empty(job::$error)) {
         echo 'найдена ошибка: ' . job::$error;
     } else {
 
-        echo '<div style="background-color: yellow; padding: 10px;" >ваш токен: ' . job::$token .'</div>';
+        echo '<div style="background-color: yellow; padding: 10px;" >ваш токен: ' . job::$token . '</div>';
     }
     echo '<pre>', print_r($result) . '</pre>';
 }
-
-
 
 // echo JWT::encode(
 //     $data,
 //     $secretKey,
 //     'HS512'
 // );
-
 
 echo '<h2>1. запись данных</h2>';
 
@@ -75,8 +71,34 @@ echo '<table>
     <td><iframe name="my-iframe" xsrc="iframe.php"></iframe></td>
     </tr></table>';
 
-echo '<h2>1. получение данных</h2>';
+echo '<h2>3. получение данных</h2>';
 
+echo '<table width="100%" >
+<tr>
+    <td style="width: 400px;padding-right:25px;" >
+    <form action="/index.get.php" target="my-iframe2" method="post" >
+
+    № посылки: <input type="number" min="0" max="9999999999" step="1" name="parcel_id" >
+    <br/>
+    новый статус: <select name="new_value" >
+        <option value="" >Выберите</option>
+        <option value="6" >В пути в город</option>
+        <option value="15" >В пути в город-отправитель</option>
+        <option value="19" >В пути в ИМ</option>
+        <option value="2" >В пути в ТД</option>
+        <option value="5" >Готов к отправке</option>
+        <option value="14" >Готов к отправке в город-отправитель</option>
+        <option value="18" >Готов к отправке в ИМ</option>
+    </select>
+    <br/>
+    токен: <input type="text" name="token" >
+    <br/>
+    
+    <button type="submit" >Отправить</button>
+    </form>
+    </td>    
+    <td><iframe style="width:100%;height: 400px; border: 1px solid green; padding: 10px;"name="my-iframe2" xsrc="iframe.php"></iframe></td>
+    </tr></table>';
 
 
 echo '<pre>

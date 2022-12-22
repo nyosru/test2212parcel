@@ -13,6 +13,14 @@ $userInfo = token::readToken($_POST['token']);
 if (empty($userInfo->login))
     die('заполните поле токен верно');
 
+    echo '<pre>', print_r($_POST, true), '</pre>';
+
+$addedId = db::getParcel($_POST);
+
+
+die('777');
+
+
 $inDb = job::validateStatusParcel($_POST, $userInfo);
 
 if (!empty(job::$error))
