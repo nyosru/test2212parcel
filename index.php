@@ -35,12 +35,6 @@ if (!empty($_POST['login']) && !empty($_POST['password'])) {
     echo '<pre>', print_r($result) . '</pre>';
 }
 
-// echo JWT::encode(
-//     $data,
-//     $secretKey,
-//     'HS512'
-// );
-
 echo '<h2>1. запись данных</h2>';
 
 
@@ -62,13 +56,15 @@ echo '<table>
         <option value="18" >Готов к отправке в ИМ</option>
     </select>
     <br/>
+    date_create: <input type="text" name="date_create" >
+    <br/>
     токен: <input type="text" name="token" >
     <br/>
     
     <button type="submit" >Отправить</button>
     </form>
     </td>    
-    <td><iframe name="my-iframe" xsrc="iframe.php"></iframe></td>
+    <td><iframe name="my-iframe" ></iframe></td>
     </tr></table>';
 
 echo '<h2>3. получение данных</h2>';
