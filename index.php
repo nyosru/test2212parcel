@@ -35,7 +35,7 @@ if (!empty($_POST['login']) && !empty($_POST['password'])) {
     echo '<pre>', print_r($result) . '</pre>';
 }
 
-echo '<h2>1. запись данных</h2>';
+echo '<h2>1. запись данных в лог</h2>';
 
 
 echo '<table width="100%">
