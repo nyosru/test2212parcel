@@ -72,7 +72,7 @@ class job
 
         $return = [
             'parcel_id' => self::validate($post['parcel_id'] ?? '', 'number', 'номер посылки'),
-            'workshop_id' => self::validate($user->workshop_id ?? '', 'number', 'номер клиента'),
+            // 'workshop_id' => self::validate($user->workshop_id ?? '', 'number', 'номер клиента'),
             'new_value' => self::validate($post['new_value'] ?? '', 'number', 'новый статус'),
             // может быть пустым
             'date_create' => self::validate($post['date_create'] ?? '', 'empty', 'date_create')
