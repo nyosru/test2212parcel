@@ -38,9 +38,9 @@ if (!empty($_POST['login']) && !empty($_POST['password'])) {
 echo '<h2>1. запись данных</h2>';
 
 
-echo '<table>
+echo '<table width="100%">
 <tr>
-    <td style="padding-right:25px;" >
+    <td style="padding-right:25px; width:250px"" >
     <form action="/index.action.php" target="my-iframe" method="post" >
 
     № посылки: <input type="number" min="0" max="9999999999" step="1" name="parcel_id" >
@@ -64,7 +64,7 @@ echo '<table>
     <button type="submit" >Отправить</button>
     </form>
     </td>    
-    <td><iframe name="my-iframe" ></iframe></td>
+    <td><iframe name="my-iframe" style="width:100%;height: 400px; border: 1px solid green; padding: 10px;"  ></iframe></td>
     </tr></table>';
 
 echo '<h2>3. получение данных</h2>';
@@ -86,7 +86,7 @@ echo '<table width="100%" >
     <button type="submit" >Отправить</button>
     </form>
     </td>    
-    <td><iframe style="width:100%;height: 400px; border: 1px solid green; padding: 10px;"name="my-iframe2" xsrc="iframe.php"></iframe></td>
+    <td><iframe style="width:100%;height: 400px; border: 1px solid green; padding: 10px;" name="my-iframe2" xsrc="iframe.php"></iframe></td>
     </tr></table>';
 
 

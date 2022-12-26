@@ -46,11 +46,15 @@ class db
 
         $sql0 = 'INSERT INTO `parcel_log` ( ' . $str0 . ' ) VALUES ( ' . $str . ' )';
         echo '<br/>' . $sql0 . '<br/>';
-        $sql = self::$db->prepare($sql0, [PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY]);
+        $sql = self::$db->prepare($sql0);
         $ee = $sql->execute($in);
         echo '<br/>';
         echo $ee;
         echo '<br/>';
+
+        if (!$ee) {
+            echo '<br/><fieldset><legend>Ошибка</legend><pre>', print_r(self::$db->errorInfo()), '</pre></fieldset>';
+        }
 
         // Получаем id вставленной записи        
         return self::$db->lastInsertId();
@@ -70,7 +74,7 @@ class db
             foreach ($param as $k => $v) {
                 if (($k == 'parcel_id' ||
                         $k == 'webshop_id' ||
-                        $k == 'date_create' 
+                        $k == 'date_create'
                         // || $k == 'new_value'
                     ) && !empty($v)
                 ) {
